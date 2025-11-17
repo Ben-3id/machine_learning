@@ -38,12 +38,11 @@ class KNN:
         array_distance=array_distance.sort_values(by=[i for i in range(1,iter+ 1 + 1 * n_3d)])
         indx=array_distance["index"].iloc[:self.k_neighbors]
         labels=self.y_train[indx]
-        label=Counter(labels).most_common(1)[0][0]
+        label =Counter(labels).most_common(1)[0][0]
         return label
-    
 
     def predict(self,targets):
         y_pred=[]
         for target in targets:
             y_pred.append(self.y_hat(target))
-        return np.array(y_pred)
+        return np.array(y_pred) 

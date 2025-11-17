@@ -29,7 +29,7 @@ scaler=StandardScaler()
 X_Train=scaler.fit_transform(X_Train)
 X_test=scaler.transform(X_test)
 y_test=y_test.astype(int)
-k=50
+k=10
 my=myKnn(k,3)
 Knn=KNN(k)
 real_KNN = KNeighborsClassifier(k)
@@ -53,5 +53,4 @@ for name,cls in KNNS.items():
     score=f1_score(y_test,y_pred)
     print(f"f1_score : {score}")
     print("\n")
-
 
